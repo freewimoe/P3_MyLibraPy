@@ -1,6 +1,10 @@
+data_file = "books.json"
+
 import sys
 import json
 import os
+from colorama import init, Fore, Style
+init(autoreset=True)
 
 def display_banner():
     print("""
@@ -16,7 +20,8 @@ __  __       _ _     _
     print("Welcome to MyLibraPy - your personal CLI book tracker!\n")
 
 def main_menu():
-    print("Please choose an option:")
+    print(Fore.CYAN + "Please choose an option:" + Style.RESET_ALL)
+
     print("[1] Add a new book")
     print("[2] View all books")
     print("[3] Search books")
@@ -26,15 +31,63 @@ def main_menu():
     print("[7] Show statistics")
     print("[0] Exit")
 
+def save_books():
+    try:
+        with open(data_file, "w", encoding="utf-8") as f:
+            json.dump(books, f, indent=4)
+        print(Fore.GREEN + "\n[Info] Book data saved.\n")
+    except Exception as e:
+        print(Fore.RED + f"\n[Error] Failed to save data: {e}\n")
+
+
+def load_books():
+    if os.path.exists(data_file):
+        try:
+            with open(data_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(Fore.RED + f"\n[Error] Failed to load data: {e}\n")
+    return []
+
 # Placeholder for book list
-books = []
+books = load_books()
+
 
 # Placeholder functions
 def add_book():
-    print("[TODO] Add book")
+    print("\n--- Add a New Book ---")
+    title = input("Enter book title: ").strip()
+    author = input("Enter author name: ").strip()
+    genre = input("Enter genre: ").strip()
+    status = input("Enter status (read/unread/wishlist): ").strip().lower()
+
+    if not title or not author:
+        print("\n[Error] Title and author are required!\n")
+        return
+
+    book = {
+        "title": title,
+        "author": author,
+        "genre": genre,
+        "status": status
+    }
+
+    books.append(book)
+    save_books()
+
+    print(f"\n[Success] '{title}' by {author} was added to your library.\n")
+
 
 def view_books():
-    print("[TODO] View books")
+    print("\n--- Your Book Collection ---")
+    if not books:
+        print("Your library is currently empty.\n")
+        return
+
+    for i, book in enumerate(books, 1):
+        print(f"{i}. {book['title']} by {book['author']} - {book['genre']} ({book['status']})")
+    print()
+
 
 def search_books():
     print("[TODO] Search books")
@@ -43,7 +96,8 @@ def edit_book():
     print("[TODO] Edit book")
 
 def delete_book():
-    print("\n--- Delete a Book ---")
+    print(Fore.RED + "\n[Error] Invalid book number.\n")
+
     view_books()
     if not books:
         return
@@ -62,12 +116,33 @@ def delete_book():
     if confirm == "y":
         deleted = books.pop(index)
         save_books()
-        print(f"\n[Success] '{deleted['title']}' was deleted from your library.\n")
+        print(Fore.GREEN + f"\n[Success] '{deleted['title']}' was deleted from your library.\n")
+
     else:
-        print("\n[Cancelled] No book was deleted.\n")
+        print(Fore.YELLOW + "\n[Cancelled] No book was deleted.\n")
+
+
+import csv  # ganz oben im Importbereich ergänzen
 
 def export_books():
-    print("[TODO] Export books")
+    if not books:
+        print(Fore.YELLOW + "\n[Notice] No books available to export.\n")
+        return
+
+    filename = "books_export.csv"
+    try:
+        with open(filename, "w", newline='', encoding='utf-8') as csvfile:
+            fieldnames = ["title", "author", "genre", "status"]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            for book in books:
+                writer.writerow(book)
+
+        print(Fore.GREEN + f"\n[Success] Books exported to '{filename}'\n")
+    except Exception as e:
+        print(Fore.RED + f"\n[Error] Failed to export books: {e}\n")
+
 
 def show_statistics():
     print("[TODO] Show statistics")
@@ -98,4 +173,6 @@ def main():
             print("\nInvalid option. Please try again.\n")
 
 if __name__ == "__main__":
+
+
     main()

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📚📘 MyLibraPy
 
 ```text
@@ -106,7 +105,5 @@ No external code or tutorials were used except for documentation from the Python
 This project is for educational purposes only.  
 No part of this code may be used without proper attribution.  
 All external content is credited or cited where applicable.
-=======
 # P3_MyLibraPy
 personal book library python app
->>>>>>> 81f22f099d71f16034deeaf4a51910ffb44456fa
