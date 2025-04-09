@@ -1,111 +1,145 @@
-# 📖 MyLibraPy
+# MyLibraPy
 
 ```text
-__  __       _ _     _                           
-|  \/  |     (_) |   | |                          
-| \  / | __ _ _| |__ | |__   __ _ _ __  _ __  ___ 
-| |\/| |/ _` | | '_ \| '_ \ / _` | '_ \| '_ \/ __|
-| |  | | (_| | | |_) | | | | (_| | |_) | |_) \__ \
-|_|  |_|\__,_|_|_.__/|_| |_|\__,_| .__/| .__/|___/
-                                 | |   | |        
-                                 |_|   |_|        
+__  __ _ _ _     _             
+|  \/  (_) |   (_)            
+| \  / |_| |__  _ _ __   __ _ 
+| |\/| | | '_ \| | '_ \ / _` |
+| |  | | | |_) | | | | | (_| |
+|_|  |_|_|_.__/|_|_| |_|\__, |
+                         __/ |
+                        |___/ 
 ```
 
 *A simple CLI library manager – built for learning, testing, and practical use in school settings.*
 
 ---
 
-## 🎒 Inspiration From the Classroom
+## 🔒 Inspiration From the Classroom
 
-As a teacher at the **European School Karlsruhe**, I often look for ways to connect code with real-life problems my students face.  
-One recurring theme in our school life is **books**: schoolbooks, reading logs, book exchanges, and personal collections.
+As a teacher at the **European School Karlsruhe**, I often look for ways to connect coding with real-life challenges my students face. One recurring theme in school life is **books**: borrowing, trading, and trying to remember what you’ve read or loaned out. That’s what inspired **MyLibraPy**.
 
-In my ICT classes, we are currently developing a full-stack **BookExchange** platform that allows students to offer and find used textbooks. It's a collaborative learning project – complete with database, server logic and frontend interface.
-
-But while working on that, I realized:  
-Why not also create a simple **personal book tracker** that any student or teacher can use on their own device?
-
-**MyLibraPy** was created to fill that gap – a small, practical command-line application where students (and colleagues!) can add and manage books locally, explore how data storage works, and even customize the program if they want to dive deeper into Python.
+This project started as a classroom experiment. I wanted to explore with my students how data could be managed effectively using Python, and how to build a usable, text-based tool that anyone could adapt. MyLibraPy is part of our ongoing journey toward building a full **BookExchange system** with database logic, GUI, and server integration. But this tool stands on its own, too – a tiny librarian in your terminal!
 
 ---
 
-## 🚀 What It Does
+## ✨ Features
 
-- 📚 Add new books with title, author, genre, and reading status  
-- 👀 View your collection  
-- 🔍 Search books by keyword  
-- 🧾 Edit and delete entries  
-- 📤 Export your collection to CSV  
-- 📈 See basic stats (how many books, genres, status types)  
-- 💾 Save your data to `books.json` for persistence  
-- 🌈 Terminal UI with simple color highlights using `colorama`
+### Existing Features
+
+- 📚 **Add Book**  
+  Lets the user enter title, author, genre, and status (read/unread/wishlist). Data is saved instantly to `books.json`.
+
+- 👀 **View Books**  
+  Lists all stored books in a readable, numbered format.
+
+- 🔍 **Search**  
+  Users can search books by keyword (title, author, or genre).
+
+- ✏️ **Edit Book**  
+  Allows the user to update any field of a selected book.
+
+- ❌ **Delete Book**  
+  Users can safely delete a book with confirmation.
+
+- 📤 **Export to CSV**  
+  One-click export to `books_export.csv` for use in Excel or Google Sheets.
+
+- 📊 **Statistics**  
+  Displays total books, genre breakdown, and status distribution.
+
+- 💾 **Persistent Storage**  
+  All data is saved and loaded from `books.json`, making the app restart-safe.
 
 ---
 
-## 🛠️ Setup & Usage
+## 🧪 Testing
 
-1. Clone the repository:
+All features were tested manually in the terminal. Testing included:
 
-```bash
-git clone https://github.com/freewimoe/P3_MyLibraPy.git
-cd P3_MyLibraPy
-```
+- Adding multiple books with different data
+- Searching with partial and full keywords
+- Editing and deleting entries by number
+- Exporting CSV and checking file contents
+- Re-running the app to verify persistent loading from JSON
 
-2. Create a virtual environment (optional):
+Tested in:
+- Windows Terminal (PowerShell, CMD)
+- VS Code integrated terminal
 
-```bash
-python -m venv venv
-venv\Scripts\activate        # On Windows
-# OR
-source venv/bin/activate       # On macOS/Linux
-```
+Validator testing:
+- No external HTML/CSS used, so not applicable
+- Python code reviewed using pylint and black for formatting
+
+---
+
+## 🐛 Known Issues
+
+- Input validation is basic: no blocking of empty genres or status typos
+- Status field accepts any string – might benefit from choice restriction
+
+---
+
+## 🚀 Deployment
+
+This CLI app runs locally via Python:
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/freewimoe/P3_MyLibraPy.git
+   cd P3_MyLibraPy
+   ```
+
+2. (Optional) Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+   source venv/bin/activate  # macOS/Linux
+   ```
 
 3. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install -r requirements.txt
-```
-
-4. Start the app:
-
-```bash
-python main.py
-```
+4. Run the app:
+   ```bash
+   python main.py
+   ```
 
 ---
 
 ## 📦 Requirements
 
-- Python 3.9+  
-- `colorama` (for colors in the terminal)
+```
+colorama==0.4.6
+```
+
+Stored in `requirements.txt`. Install via `pip install -r requirements.txt`.
 
 ---
 
-## 🧪 For Students & Educators
+## 🧭 Future Features
 
-This project is great for:
-- 🧑‍🎓 Students who want to learn how programs handle data
-- 👩‍🏫 Teachers who need examples of small but complete CLI projects
-- 🧠 Everyone curious about Python, JSON files, and how apps can grow from simple ideas
-
-It’s intentionally kept simple, **easy to read**, and ready to be extended.
+- GUI version using Tkinter or PyQt
+- Sync with cloud for shared book lists
+- Multiple user profiles
+- Book rating / review system
 
 ---
 
-## 👨‍🏫 About the Author
+## 🙏 Credits
 
-Created by **Friedrich-Wilhelm Möller**,  
-ICT teacher at the **European School Karlsruhe**,  
-as part of the **Code Institute** Full Stack Diploma – and as a tool to help students and teachers alike learn through making.
-
----
-
-## 📜 License
-
-This is a free educational project.  
-Use it, remix it, learn from it – and if you improve it, feel free to share it back.
+- [Colorama](https://github.com/tartley/colorama) for beautiful terminal output
+- My students at the European School Karlsruhe for testing and feedback
+- Code Institute for pushing us to think in full-stack terms
 
 ---
 
-🧡 *Learning is best when it starts with something useful.*
+## 🔗 Live Repository
 
+👉 [github.com/freewimoe/P3_MyLibraPy](https://github.com/freewimoe/P3_MyLibraPy)
+
+---
+
+Thanks for reading – and happy book tracking 📚
