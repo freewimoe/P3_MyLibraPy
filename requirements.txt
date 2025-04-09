@@ -1,1 +1,1 @@
-# No external packages used (yet)
+colorama==0.4.6
