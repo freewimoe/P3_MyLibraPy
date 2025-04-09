@@ -90,7 +90,27 @@ def view_books():
 
 
 def search_books():
-    print("[TODO] Search books")
+    print("\n--- Search Books ---")
+    keyword = input("Enter a keyword (title, author, or genre): ").strip().lower()
+
+    if not keyword:
+        print(Fore.YELLOW + "\n[Notice] No keyword entered.\n")
+        return
+
+    results = []
+    for book in books:
+        if (keyword in book['title'].lower()
+                or keyword in book['author'].lower()
+                or keyword in book['genre'].lower()):
+            results.append(book)
+
+    if results:
+        print(Fore.CYAN + f"\nFound {len(results)} matching book(s):\n")
+        for i, book in enumerate(results, 1):
+            print(f"{i}. {book['title']} by {book['author']} - {book['genre']} ({book['status']})")
+    else:
+        print(Fore.RED + "\nNo matching books found.\n")
+
 
 def edit_book():
     print("[TODO] Edit book")
