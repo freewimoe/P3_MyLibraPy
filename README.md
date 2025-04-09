@@ -1,4 +1,4 @@
-# 📚📘 MyLibraPy
+# 📖 MyLibraPy
 
 ```text
 __  __       _ _     _                           
@@ -11,66 +11,62 @@ __  __       _ _     _
                                  |_|   |_|        
 ```
 
-A simple yet powerful command-line tool to manage your personal book library.
+*A simple CLI library manager – built for learning, testing, and practical use in school settings.*
 
 ---
 
-## 📖 Project Overview
+## 🎒 Inspiration From the Classroom
 
-MyLibraPy is a Python command-line application designed to help users manage their personal book collections. It allows users to add, view, and search books stored in a local JSON file.  
-The project is part of the Code Institute Portfolio Project 3 – Python Essentials.
+As a teacher at the **European School Karlsruhe**, I often look for ways to connect code with real-life problems my students face.  
+One recurring theme in our school life is **books**: schoolbooks, reading logs, book exchanges, and personal collections.
 
----
+In my ICT classes, we are currently developing a full-stack **BookExchange** platform that allows students to offer and find used textbooks. It's a collaborative learning project – complete with database, server logic and frontend interface.
 
-## ✨ Features
+But while working on that, I realized:  
+Why not also create a simple **personal book tracker** that any student or teacher can use on their own device?
 
-- Add new books (title, author, genre, status)  
-- View all books in a formatted list  
-- Search books by keyword (title, author, genre)  
-- Store data persistently in a `books.json` file  
-- *(Planned)* Edit existing entries  
-- *(Planned)* Delete entries  
-- *(Planned)* Export to CSV  
-- *(Planned)* Show collection statistics  
+**MyLibraPy** was created to fill that gap – a small, practical command-line application where students (and colleagues!) can add and manage books locally, explore how data storage works, and even customize the program if they want to dive deeper into Python.
 
 ---
 
-## 🧪 Testing
+## 🚀 What It Does
 
-Manual testing has been carried out for all currently implemented functions:
-
-- ✅ Add book with complete and incomplete input  
-- ✅ View book list when empty or filled  
-- ✅ Search with matching and non-matching keywords  
-- ⏳ Edit, delete, export, and statistics to be added  
-
-Planned: A separate `tests/manual_test_plan.md` document for future tests.
-
----
-
-## 🧰 Technologies Used
-
-- Python 3  
-- Built-in libraries: `json`, `os`, `sys`  
-- CLI-based interface (no external packages required)  
+- 📚 Add new books with title, author, genre, and reading status  
+- 👀 View your collection  
+- 🔍 Search books by keyword  
+- 🧾 Edit and delete entries  
+- 📤 Export your collection to CSV  
+- 📈 See basic stats (how many books, genres, status types)  
+- 💾 Save your data to `books.json` for persistence  
+- 🌈 Terminal UI with simple color highlights using `colorama`
 
 ---
 
-## ▶️ How to Run This Project
+## 🛠️ Setup & Usage
 
-**Clone the repository:**
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/freewimoe/P3_MyLibraPy.git
-```
-
-**Navigate into the project folder:**
-
-```bash
 cd P3_MyLibraPy
 ```
 
-**Run the application:**
+2. Create a virtual environment (optional):
+
+```bash
+python -m venv venv
+venv\Scripts\activate        # On Windows
+# OR
+source venv/bin/activate       # On macOS/Linux
+```
+
+3. Install requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the app:
 
 ```bash
 python main.py
@@ -78,32 +74,38 @@ python main.py
 
 ---
 
-## 🚀 Deployment
+## 📦 Requirements
 
-Deployment is planned via **Replit** or **PythonAnywhere**.  
-A live link will be provided here once available.
-
----
-
-## 🔁 Version Control
-
-- All development is tracked via Git and GitHub  
-- Commits include clear messages describing each change  
-- Final submission will be tagged as `v1.0-submission-ready`  
+- Python 3.9+  
+- `colorama` (for colors in the terminal)
 
 ---
 
-## 🙌 Credits
+## 🧪 For Students & Educators
 
-This project was developed by **Friedrich-Wilhelm Möller** as part of the Code Institute Diploma in Full Stack Software Development – Python Essentials module.  
-No external code or tutorials were used except for documentation from the Python standard library.
+This project is great for:
+- 🧑‍🎓 Students who want to learn how programs handle data
+- 👩‍🏫 Teachers who need examples of small but complete CLI projects
+- 🧠 Everyone curious about Python, JSON files, and how apps can grow from simple ideas
+
+It’s intentionally kept simple, **easy to read**, and ready to be extended.
 
 ---
 
-## 📜 License & Disclaimer
+## 👨‍🏫 About the Author
 
-This project is for educational purposes only.  
-No part of this code may be used without proper attribution.  
-All external content is credited or cited where applicable.
-# P3_MyLibraPy
-personal book library python app
+Created by **Friedrich-Wilhelm Möller**,  
+ICT teacher at the **European School Karlsruhe**,  
+as part of the **Code Institute** Full Stack Diploma – and as a tool to help students and teachers alike learn through making.
+
+---
+
+## 📜 License
+
+This is a free educational project.  
+Use it, remix it, learn from it – and if you improve it, feel free to share it back.
+
+---
+
+🧡 *Learning is best when it starts with something useful.*
+
