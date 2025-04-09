@@ -4,6 +4,7 @@ import sys
 import json
 import os
 from colorama import init, Fore, Style
+from collections import Counter
 init(autoreset=True)
 
 def display_banner():
@@ -113,7 +114,40 @@ def search_books():
 
 
 def edit_book():
-    print("[TODO] Edit book")
+    print("\n--- Edit a Book ---")
+    view_books()
+    if not books:
+        return
+
+    try:
+        index = int(input("Enter the number of the book you want to edit: ")) - 1
+        if index < 0 or index >= len(books):
+            print(Fore.RED + "\n[Error] Invalid book number.\n")
+            return
+    except ValueError:
+        print(Fore.RED + "\n[Error] Please enter a valid number.\n")
+        return
+
+    book = books[index]
+    print(f"\nEditing '{book['title']}' by {book['author']}:\n")
+
+    new_title = input(f"New title (leave blank to keep '{book['title']}'): ").strip()
+    new_author = input(f"New author (leave blank to keep '{book['author']}'): ").strip()
+    new_genre = input(f"New genre (leave blank to keep '{book['genre']}'): ").strip()
+    new_status = input(f"New status (leave blank to keep '{book['status']}'): ").strip().lower()
+
+    if new_title:
+        book['title'] = new_title
+    if new_author:
+        book['author'] = new_author
+    if new_genre:
+        book['genre'] = new_genre
+    if new_status:
+        book['status'] = new_status
+
+    save_books()
+    print(Fore.GREEN + "\n[Success] Book information updated.\n")
+
 
 def delete_book():
     print(Fore.RED + "\n[Error] Invalid book number.\n")
@@ -165,7 +199,27 @@ def export_books():
 
 
 def show_statistics():
-    print("[TODO] Show statistics")
+    print("\n--- Library Statistics ---")
+    
+    if not books:
+        print(Fore.YELLOW + "\n[Notice] Your library is currently empty.\n")
+        return
+
+    total = len(books)
+    genres = Counter(book["genre"].lower() for book in books if book.get("genre"))
+    statuses = Counter(book["status"].lower() for book in books if book.get("status"))
+
+    print(Fore.CYAN + f"\nTotal books: {total}\n")
+
+    print(Fore.MAGENTA + "By Genre:")
+    for genre, count in genres.items():
+        print(f"  - {genre.capitalize()}: {count}")
+
+    print(Fore.GREEN + "\nBy Status:")
+    for status, count in statuses.items():
+        print(f"  - {status.capitalize()}: {count}")
+    
+    print()
 
 def main():
     display_banner()
