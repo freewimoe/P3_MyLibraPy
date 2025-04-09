@@ -1,14 +1,16 @@
 # MyLibraPy
 
 ```text
-__  __ _ _ _     _             
-|  \/  (_) |   (_)            
-| \  / |_| |__  _ _ __   __ _ 
-| |\/| | | '_ \| | '_ \ / _` |
-| |  | | | |_) | | | | | (_| |
-|_|  |_|_|_.__/|_|_| |_|\__, |
-                         __/ |
-                        |___/ 
+
+  __  __       _      _ _               _____       
+ |  \/  |     | |    (_) |             |  __ \      
+ | \  / |_   _| |     _| |__  _ __ __ _| |__) |   _ 
+ | |\/| | | | | |    | | '_ \| '__/ _` |  ___/ | | |
+ | |  | | |_| | |____| | |_) | | | (_| | |   | |_| |
+ |_|  |_|\__, |______|_|_.__/|_|  \__,_|_|    \__, |
+          __/ |                                __/ |
+         |___/                                |___/ 
+
 ```
 
 *A simple CLI library manager – built for learning, testing, and practical use in school settings.*
@@ -17,129 +19,156 @@ __  __ _ _ _     _
 
 ## 🔒 Inspiration From the Classroom
 
-As a teacher at the **European School Karlsruhe**, I often look for ways to connect coding with real-life challenges my students face. One recurring theme in school life is **books**: borrowing, trading, and trying to remember what you’ve read or loaned out. That’s what inspired **MyLibraPy**.
+As a teacher at the **European School Karlsruhe**, I constantly explore ways to blend code with everyday school experiences. One of the most practical and relatable topics? **Books.**
 
-This project started as a classroom experiment. I wanted to explore with my students how data could be managed effectively using Python, and how to build a usable, text-based tool that anyone could adapt. MyLibraPy is part of our ongoing journey toward building a full **BookExchange system** with database logic, GUI, and server integration. But this tool stands on its own, too – a tiny librarian in your terminal!
+This small app grew out of that: a terminal-based tool to help track personal book collections. Students were curious about file handling, persistent data, and terminal UIs – so we started building something together. Not flashy. Not fancy. But it works, and it grows with us.
+
+In parallel, we're also working on a bigger platform: a full-featured **BookExchange** app (database, GUI, server, the works). But **MyLibraPy** is where we try things out. A sandbox. A real-use example. A place where students, colleagues, and I can experiment with real code, for real use.
+
+> “Sir, can we make it print in color?”  
+> “Yes. And now we’re importing Colorama.”
+
+This project became part lesson, part library.
 
 ---
 
 ## ✨ Features
 
-### Existing Features
+### ✅ Implemented
 
 - 📚 **Add Book**  
-  Lets the user enter title, author, genre, and status (read/unread/wishlist). Data is saved instantly to `books.json`.
+  Enter title, author, genre, and status (read/unread/wishlist) – saved to `books.json`.
 
 - 👀 **View Books**  
-  Lists all stored books in a readable, numbered format.
+  See all your books in a clear, numbered list.
 
 - 🔍 **Search**  
-  Users can search books by keyword (title, author, or genre).
+  Search titles, authors, or genres with any keyword.
 
 - ✏️ **Edit Book**  
-  Allows the user to update any field of a selected book.
+  Select a book by number and change any field.
 
 - ❌ **Delete Book**  
-  Users can safely delete a book with confirmation.
+  Choose a book to delete (with confirmation).
 
 - 📤 **Export to CSV**  
-  One-click export to `books_export.csv` for use in Excel or Google Sheets.
+  Write all books to `books_export.csv` – spreadsheet-ready.
 
 - 📊 **Statistics**  
-  Displays total books, genre breakdown, and status distribution.
+  Get a breakdown by genre and status, with totals.
 
 - 💾 **Persistent Storage**  
-  All data is saved and loaded from `books.json`, making the app restart-safe.
+  Your collection is saved between sessions using JSON.
 
 ---
 
-## 🧪 Testing
+## 🖼️ Screenshots
 
-All features were tested manually in the terminal. Testing included:
+A few glimpses of the interface in use:
 
-- Adding multiple books with different data
-- Searching with partial and full keywords
-- Editing and deleting entries by number
-- Exporting CSV and checking file contents
-- Re-running the app to verify persistent loading from JSON
+- **Banner / Welcome**:  
+  ![Banner](media/banner.png)
 
-Tested in:
-- Windows Terminal (PowerShell, CMD)
-- VS Code integrated terminal
+- **Main Menu**:  
+  ![Menu](media/menu.png)
 
-Validator testing:
-- No external HTML/CSS used, so not applicable
-- Python code reviewed using pylint and black for formatting
+- **Add Book Dialog**:  
+  ![Add Book](media/add_book.png)
+
+- **Book List View**:  
+  ![View Books](media/view_books.png)
+
+- **Library Statistics**:  
+  ![Statistics](media/statistics.png)
+
+- **Full Workflow Preview (GIF)**:  
+  ![Workflow GIF](media/workflow.gif)
+
+---
+
+## 🧪 Manual Testing
+
+All functions were tested in:
+
+- ✅ Windows Terminal (PowerShell & CMD)
+- ✅ VS Code terminal
+
+### Covered Scenarios:
+- Adding new books
+- Editing book details
+- Deleting entries
+- Searching (case-insensitive)
+- JSON storage & reload after restart
+- CSV export and file verification
+
+### Code Quality:
+- Linted using `pylint`
+- Formatted with `black`
 
 ---
 
 ## 🐛 Known Issues
 
-- Input validation is basic: no blocking of empty genres or status typos
-- Status field accepts any string – might benefit from choice restriction
+- No dropdowns or fixed status choices (user can mistype)
+- Genre & status inputs are free text
+- No duplication checks yet
 
 ---
 
-## 🚀 Deployment
+## 🚀 How to Run Locally
 
-This CLI app runs locally via Python:
-
-1. Clone the repo:
+1. Clone this repository:
    ```bash
    git clone https://github.com/freewimoe/P3_MyLibraPy.git
    cd P3_MyLibraPy
    ```
 
-2. (Optional) Create and activate a virtual environment:
+2. (Optional) Create a virtual environment:
    ```bash
    python -m venv venv
    venv\Scripts\activate  # Windows
    source venv/bin/activate  # macOS/Linux
    ```
 
-3. Install requirements:
+3. Install the required package:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Run the app:
+4. Launch the app:
    ```bash
    python main.py
    ```
 
 ---
 
-## 📦 Requirements
+## 📦 Dependencies
 
 ```
 colorama==0.4.6
 ```
 
-Stored in `requirements.txt`. Install via `pip install -r requirements.txt`.
+---
+
+## 🔮 What’s Next?
+
+- Full GUI (Tkinter or PyQt)
+- Multi-user mode with login
+- Ratings & personal reviews
+- Cloud sync (e.g. Firebase or Supabase)
 
 ---
 
-## 🧭 Future Features
+## 🙏 Thanks & Credits
 
-- GUI version using Tkinter or PyQt
-- Sync with cloud for shared book lists
-- Multiple user profiles
-- Book rating / review system
-
----
-
-## 🙏 Credits
-
-- [Colorama](https://github.com/tartley/colorama) for beautiful terminal output
-- My students at the European School Karlsruhe for testing and feedback
-- Code Institute for pushing us to think in full-stack terms
+- My **students** at the European School Karlsruhe
+- The **Code Institute** for the structured challenge
+- [Colorama](https://github.com/tartley/colorama) for terminal color magic
 
 ---
 
-## 🔗 Live Repository
+## 🔗 Repository
 
 👉 [github.com/freewimoe/P3_MyLibraPy](https://github.com/freewimoe/P3_MyLibraPy)
 
----
-
-Thanks for reading – and happy book tracking 📚
+If you're a teacher, student, or just a curious coder – I hope MyLibraPy inspires you like it inspired us in class. 📚✨
