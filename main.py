@@ -43,7 +43,28 @@ def edit_book():
     print("[TODO] Edit book")
 
 def delete_book():
-    print("[TODO] Delete book")
+    print("\n--- Delete a Book ---")
+    view_books()
+    if not books:
+        return
+
+    try:
+        index = int(input("Enter the number of the book you want to delete: ")) - 1
+        if index < 0 or index >= len(books):
+            print("\n[Error] Invalid book number.\n")
+            return
+    except ValueError:
+        print("\n[Error] Please enter a valid number.\n")
+        return
+
+    book = books[index]
+    confirm = input(f"Are you sure you want to delete '{book['title']}' by {book['author']}? (y/n): ").strip().lower()
+    if confirm == "y":
+        deleted = books.pop(index)
+        save_books()
+        print(f"\n[Success] '{deleted['title']}' was deleted from your library.\n")
+    else:
+        print("\n[Cancelled] No book was deleted.\n")
 
 def export_books():
     print("[TODO] Export books")
