@@ -141,6 +141,28 @@ All functions were tested in:
    ```
 
 ---
+---
+
+## 🌐 How to Run in Gitpod (Online Deployment)
+
+This app can also be run entirely in the browser using [Gitpod](https://gitpod.io), no installation needed.
+
+### 🚀 Quick Start:
+
+1. Click this button to launch the workspace:
+
+   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freewimoe/P3_MyLibraPy)
+
+2. Wait for the Gitpod workspace to load.
+
+3. The terminal will open. Run the following command to start the app:
+
+   ```bash
+   python main.py
+   ```
+4. Interact with the app using your keyboard.
+
+   No installation required – Gitpod handles everything for you.
 
 ## 📦 Dependencies
 
