@@ -67,7 +67,6 @@ This project became part lesson, part library.
 A few glimpses of the interface in use:
 
 - **Banner / Welcome**:  
-  ![Banner](media/banner.png)
 
 - **Main Menu**:  
   ![Menu](media/menu.png)
