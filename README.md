@@ -1,5 +1,8 @@
 # MyLibraPy
 
+> 💻 Try it now on Replit:
+[![Run on Replit](https://replit.com/badge/github/freewimoe/P3_MyLibraPy)](https://replit.com/@Friedrich-Wilhe/P3MyLibraPy)
+
 ```text
 
   __  __       _      _ _               _____       
@@ -16,8 +19,6 @@
 *A simple CLI library manager – built for learning, testing, and practical use in school settings.*
 
 ---
-[![Run on Replit](https://replit.com/badge/github/freewimoe/P3_MyLibraPy)](https://replit.com/@Friedrich-Wilhe/P3MyLibraPy)
-
 
 
 ## 🔒 Inspiration From the Classroom
@@ -71,6 +72,10 @@ A few glimpses of the interface in use:
 
 - **Banner / Welcome**:  
   ![Menu](media/banner.png)
+
+  - **App Startup (Console View)**:  
+  ![Console](media/console_start.png)
+
 - **Main Menu**:  
   ![Menu](media/menu.png)
 
@@ -164,8 +169,9 @@ Therefore, this project uses [Replit](https://replit.com) for browser-based depl
 
 You can run this app entirely in the browser using [Replit](https://replit.com) – no installation required.
 
-💡 Need a preview?
-Check out this GIF of the full workflow.
+💡 Need a preview?  
+Check out the [Full Workflow GIF here](#🖼️-screenshots).
+
 
 ### ✅ Steps to run:
 
@@ -185,14 +191,16 @@ Check out this GIF of the full workflow.
 5. Use your keyboard to interact with the app  
    (e.g., type `1` and press Enter to add a book).
 
-### ℹ️ Note:
+### ℹ️ Note: `.replit` File
 
-If the app doesn't start automatically after clicking Run, make sure the file `.replit` contains the following:
+If the app doesn't start automatically after clicking **Run**, make sure the file **`.replit`** (in the project root) contains the following:
+
 
 ```ini
 language = "python3"
 run = "python3 main.py"
 ```
+If you renamed or moved `main.py`, make sure the path matches in `.replit`.
 
 ## 📦 Dependencies
 
