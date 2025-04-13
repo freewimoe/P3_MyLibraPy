@@ -16,6 +16,9 @@
 *A simple CLI library manager – built for learning, testing, and practical use in school settings.*
 
 ---
+[![Run on Replit](https://replit.com/badge/github/freewimoe/P3_MyLibraPy)](https://replit.com/@Friedrich-Wilhe/P3MyLibraPy)
+
+
 
 ## 🔒 Inspiration From the Classroom
 
@@ -140,28 +143,56 @@ All functions were tested in:
    ```
 
 ---
----
 
-## 🌐 How to Run in Gitpod (Online Deployment)
+## 🚫 Why Gitpod is Not Used
 
-This app can also be run entirely in the browser using [Gitpod](https://gitpod.io), no installation needed.
+Although Gitpod is normally a recommended platform by the Code Institute,  
+this project is a **command-line (CLI)** Python application and does not require a web server.
 
-### 🚀 Quick Start:
+Additionally, Gitpod now requires a **dedicated AWS Runner setup**, which is not accessible without an AWS account and permissions.
 
-1. Click this button to launch the workspace:
+Therefore, this project uses [Replit](https://replit.com) for browser-based deployment and testing, which is more suited for CLI projects like this one.
 
-   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freewimoe/P3_MyLibraPy)
+→ See next section [How to Run on Replit](#🌐-how-to-run-on-replit) above.
 
-2. Wait for the Gitpod workspace to load.
 
-3. The terminal will open. Run the following command to start the app:
 
-   ```bash
-   python main.py
-   ```
-4. Interact with the app using your keyboard.
+## 🌐 How to Run on Replit (Recommended)
+> ⚠️ **Note:** Since this is a CLI app (not a web app), Replit will not open a browser preview.
+> Instead, you must **switch to the "Console" tab** after pressing the green **"Run"** button.
 
-   No installation required – Gitpod handles everything for you.
+
+You can run this app entirely in the browser using [Replit](https://replit.com) – no installation required.
+
+💡 Need a preview?
+Check out this GIF of the full workflow.
+
+### ✅ Steps to run:
+
+1. Go to the Replit project page:  
+   👉 [https://replit.com/@Friedrich-Wilhe/P3MyLibraPy](https://replit.com/@Friedrich-Wilhe/P3MyLibraPy)
+
+2. Log in with a free Replit account (if you're not logged in already).
+
+3. Click the **"Remix this app"** button.  
+   This will create your own copy of the project with full access.
+
+4. In your remix:
+   - Click the green **“Run”** button at the top.
+   - Then **switch to the "Console" tab** (below or next to the output window)  
+     → This is where the app runs and shows its CLI menu.
+
+5. Use your keyboard to interact with the app  
+   (e.g., type `1` and press Enter to add a book).
+
+### ℹ️ Note:
+
+If the app doesn't start automatically after clicking Run, make sure the file `.replit` contains the following:
+
+```ini
+language = "python3"
+run = "python3 main.py"
+```
 
 ## 📦 Dependencies
 
@@ -185,6 +216,8 @@ colorama==0.4.6
 - My **students** at the European School Karlsruhe
 - The **Code Institute** for the structured challenge
 - [Colorama](https://github.com/tartley/colorama) for terminal color magic
+- My mentor **Mo Shami** for valuable guidance
+- **Kay Welfare**, my cohort facilitator, for ongoing support
 
 ---
 
