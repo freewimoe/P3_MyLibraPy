@@ -8,7 +8,7 @@ from collections import Counter
 init(autoreset=True)
 
 def display_banner():
-    print("""
+    print(r"""
   __  __       _      _ _               _____       
  |  \/  |     | |    (_) |             |  __ \      
  | \  / |_   _| |     _| |__  _ __ __ _| |__) |   _ 
